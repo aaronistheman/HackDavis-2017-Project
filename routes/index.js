@@ -32,6 +32,12 @@ router.get('/main-menu', function(req, res, next) {
 router.get('/register', function(req, res, next){
     res.render('register');
 });
+
+// visit Login page
+router.get('/login', function(req, res, next){
+  res.render('login');
+});
+
 // junk route
 router.get('/schedule', function(req, res, next) {
   res.render('event_form');

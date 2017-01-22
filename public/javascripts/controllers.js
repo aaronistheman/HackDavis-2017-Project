@@ -2,7 +2,7 @@ var app = angular.module('hackathon', []);
 
 
 
-var LocalStorageTokenName = 'rate-token';
+var LocalStorageTokenName = 'hackathon-token';
 app.factory('auth', [
 '$http',
 '$window',
@@ -99,7 +99,8 @@ function($scope, auth){
     auth.register($scope.user).error(function(error){
       $scope.error = error;
     }).then(function(){
-      // $state.go('home');
+      // go to different page
+      document.getElementById("anchor").click();
     });
   };
 
@@ -107,7 +108,8 @@ function($scope, auth){
     auth.logIn($scope.user).error(function(error){
       $scope.error = error;
     }).then(function(){
-      // $state.go('home');
+      // go to different page
+      document.getElementById("anchor").click();
     })
   };
 }]); // AuthCtrl controller
