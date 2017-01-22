@@ -1,0 +1,23 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+
+<script src="/javascripts/controllers.js"></script>
+<body ng-app="hackathon" ng-controller="ScheduleCtrl" ng-cloak>
+
+<form ng-submit = "newevent()">
+  Event Title:<br>
+  <input type="text" ng-model="title"><br><br>
+  Event Start Hour:<br>
+  <input type="text" ng-model="starthour"><br><br>
+  Event End Hour:<br>
+  <input type="text" ng-model="endhour"><br><br>
+  Description:<br>
+  <textarea ng-model="description" rows="10" cols="30"></textarea>
+  <br>
+  <input type="submit">
+</form>
+
+</body>
+
+</html>
