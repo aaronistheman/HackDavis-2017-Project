@@ -15,7 +15,8 @@ var ListItems = mongoose.model('ListItem');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'bob' });
+  // res.render('index', { title: 'bob' });
+  res.render('main-menu');
 });
 
 // junk route
@@ -28,10 +29,21 @@ router.get('/main-menu', function(req, res, next) {
     res.render('main-menu');
 });
 
+router.get('/game-menu',function(req,res, next) {
+	res.render('game-menu');
+});
+
+
 // visit Register page
 router.get('/register', function(req, res, next){
     res.render('register');
 });
+
+// visit Login page
+router.get('/login', function(req, res, next){
+  res.render('login');
+});
+
 // junk route
 router.get('/schedule', function(req, res, next) {
   res.render('event_form');
@@ -89,6 +101,17 @@ router.post('/Events', function(req, res, next) {
 
     res.json(event);
   })
+});
+
+// Get list items
+router.get('/Events', function(req, res, next) {
+  ListItems.find(function(err, listitems) {
+    if (err) {
+      return next(err);
+    }
+
+    res.json(listitems);
+  });
 });
 
 

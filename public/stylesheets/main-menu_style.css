@@ -1,0 +1,74 @@
+h1{
+	color: #FFF;
+	font-size:32px;	
+	font-family: sans-serif;
+	 text-align: center;
+	 background-color: SteelBlue;
+	 margin-bottom:0em
+}
+h2{
+	margin-top:0em
+font-size:22px;
+font-family:sans-serif;
+ text-align: center;
+ background-color: Teal;
+ overflow: auto;
+}
+p{
+	background-color: Cyan;
+}
+/*.choices a {
+	font-size: 32px;
+	font-family: sans-serif;
+	background: DarkCyan;
+	border: 1px solid DarkCyan;
+	border-radius: 10px;
+	color: White;
+	display: inline-block;
+	padding: 10px;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	margin: auto;
+	width:50%;
+	margin-top: 50px;
+	margin-bottom: -30px;
+	margin-left:-100px;
+	margin-right: -500px;
+}
+.choices a:hover {
+  background: white;
+  border: 1px solid DarkCyan;
+  color: DarkCyan;
+  animation: ease;
+}*/
+/*.choices {
+background: #EEEFF1;
+ box-sizing: border-box;
+  width: 10px;
+  height:10px%;
+  margin: 20px auto;
+  padding: 20px 0px;
+    display: inline-block;
+  margin: 0px 2% 80px 2%;
+  text-align: center;
+}*/
+/*.choices img {
+  margin-right: 50px;
+  width: 20%;
+}*/
+table, th, td {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  font-size: 32px;
+}
+.choices
+{
+margin-left: auto;
+margin-right: auto;
+width: 20%;
+}
+
+/*.img{
+	width: 20%;
+}*/

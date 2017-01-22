@@ -2,7 +2,7 @@ var app = angular.module('hackathon', []);
 
 
 
-var LocalStorageTokenName = 'rate-token';
+var LocalStorageTokenName = 'hackathon-token';
 app.factory('auth', [
 '$http',
 '$window',
@@ -81,10 +81,30 @@ app.factory('listitems', [
 '$http',
 '$window',
 function($http, $window) {
-  var o = {};
-  o.create = function(item){
-    return $http.post('/ListItems', item).success(function(){});
+  // var o = {
+  //   listitems : [
+  //     {content: "Go to school"},
+  //     {content: "Take the bus"},
+  //     {content: "Think of a name for the app"}
+  //     ]
+  // };
+  var o = {
+    listitems : []
   };
+
+  o.create = function(item){
+    return $http.post('/ListItems', item).success(function(data){
+      o.listitems.push(data);
+    });
+  };
+
+  o.getAll = function() {
+    return $http.get('/Events').success(function(data) {
+      angular.copy(data, o.listitems);
+    });
+  };
+
+  o.getAll();
   return o;
 }]);
 
@@ -99,7 +119,8 @@ function($scope, auth){
     auth.register($scope.user).error(function(error){
       $scope.error = error;
     }).then(function(){
-      // $state.go('home');
+      // go to different page
+      document.getElementById("anchor").click();
     });
   };
 
@@ -107,7 +128,8 @@ function($scope, auth){
     auth.logIn($scope.user).error(function(error){
       $scope.error = error;
     }).then(function(){
-      // $state.go('home');
+      // go to different page
+      document.getElementById("anchor").click();
     })
   };
 }]); // AuthCtrl controller
@@ -117,6 +139,8 @@ app.controller('CheckCtrl', [
 'auth',
 'listitems',
 function($scope, auth, listitems){
+  $scope.listitems = listitems.listitems;
+
   $scope.create = function(){
     if(!($scope.content)) {
       alert("Please enter content");
