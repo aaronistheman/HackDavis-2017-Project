@@ -21,6 +21,7 @@ router.get('/dude', function(req, res, next) {
   res.render('second');
 });
 
+
 router.get('/main-menu', function(req, res, next) {
     res.render('main-menu');
 });
@@ -67,6 +68,20 @@ router.post('/login', function(req, res, next){
 });
 
 
+
+
+
+router.get('/game2', function(req, res, next) {
+  res.render('game2');
+});
+
+router.get('/Game', function(req, res, next) {
+  res.render('Game');
+});
+
+router.get('/game3', function(req, res, next) {
+  res.render('game3');
+});
 
 
 module.exports = router;
