@@ -81,7 +81,14 @@ app.factory('listitems', [
 '$http',
 '$window',
 function($http, $window) {
-  var o = {};
+  var o = {
+    listitems : [
+      {content: "Go to school"},
+      {content: "Take the bus"},
+      {content: "Think of a name for the app"}
+      ]
+  };
+
   o.create = function(item){
     return $http.post('/ListItems', item).success(function(){});
   };
@@ -119,6 +126,8 @@ app.controller('CheckCtrl', [
 'auth',
 'listitems',
 function($scope, auth, listitems){
+  $scope.listitems = listitems.listitems;
+
   $scope.create = function(){
     if(!($scope.content)) {
       alert("Please enter content");
