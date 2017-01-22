@@ -61,6 +61,7 @@ function($http, $window) {
 }]); // auth factory
 
 
+
 app.factory('Schedule', [  // factory for schedule
 '$http',
 '$window',
@@ -74,6 +75,18 @@ function($http, $window) {
   return s;
 }]); // auth factory
 
+
+
+app.factory('listitems', [
+'$http',
+'$window',
+function($http, $window) {
+  var o = {};
+  o.create = function(item){
+    return $http.post('/ListItems', item).success(function(){});
+  };
+  return o;
+}]);
 
 
 app.controller('AuthCtrl', [
@@ -99,6 +112,20 @@ function($scope, auth){
   };
 }]); // AuthCtrl controller
 
+app.controller('CheckCtrl', [
+'$scope',
+'auth',
+'listitems',
+function($scope, auth, listitems){
+  $scope.create = function(){
+    if(!($scope.content)) {
+      alert("Please enter content");
+      return;
+    }
+    listitems.create({content: $scope.content});
+    $scope.content = "";
+  };
+}]); 
 
  app.controller('ScheduleCtrl', [
  '$scope', 'Schedule',
