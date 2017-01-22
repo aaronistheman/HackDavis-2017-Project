@@ -1,0 +1,53 @@
+.choices a {
+font-size: 32px;
+font-family: sans-serif;
+background: DarkCyan;
+border: 1px solid DarkCyan;
+border-radius: 10px;
+color: White;
+display: inline-block;
+padding: 10px;
+text-transform: uppercase;
+text-decoration: none;
+text-align: center;
+margin: auto;
+width:50%;
+margin-top: 50px;
+margin-bottom: -30px;
+margin-left:-100px;
+margin-right: -500px;
+}
+.choices a:hover {
+ background: white;
+ border: 1px solid DarkCyan;
+ color: DarkCyan;
+ animation: ease;
+}
+
+/*.bp {
+ background-color: #BDFCE8;
+ color: #fff;
+ font-size: 18px;
+ padding: 8px 30px;
+ text-decoration: none;
+ display: inline-block;
+}
+
+a.bp:hover {
+ background:#ffa800;
+ color:#000;
+}
+
+.trum {
+ background-color: #BDFCE8;
+ color: #fff;
+ font-size: 18px;
+ padding: 8px 30px;
+ text-decoration: none;
+ display: inline-block;
+}
+
+a.trum:hover {
+ background:#ffa800;
+ color:#000;
+}*/
