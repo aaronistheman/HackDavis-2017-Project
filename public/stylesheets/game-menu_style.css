@@ -1,0 +1,45 @@
+h1{
+	color: #FFF;
+	font-size:32px;	
+	font-family: sans-serif;
+	 text-align: center;
+	 background-color: SteelBlue;
+	 margin-bottom:0em
+}
+h2{
+	margin-top:0em
+font-size:22px;
+font-family:sans-serif;
+ text-align: center;
+ background-color: Teal;
+ overflow: auto;
+}
+p{
+	overflow:scroll;
+	background-color: Cyan;
+}
+.choices a {
+	font-size: 32px;
+	font-family: sans-serif;
+	background: DarkCyan;
+	border: 1px solid DarkCyan;
+	border-radius: 10px;
+	color: White;
+	display: inline-block;
+	padding: 10px;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	margin: auto;
+	width:-50%;
+	margin-top: 50px;
+	margin-bottom: -30px;
+	margin-left:-100px;
+	margin-right: -500px;
+}
+.choices a:hover {
+  background: white;
+  border: 1px solid DarkCyan;
+  color: DarkCyan;
+  animation: ease;
+}

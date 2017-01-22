@@ -28,6 +28,11 @@ router.get('/main-menu', function(req, res, next) {
     res.render('main-menu');
 });
 
+router.get('/game-menu',function(req,res, next) {
+	res.render('game-menu');
+});
+
+
 // visit Register page
 router.get('/register', function(req, res, next){
     res.render('register');
