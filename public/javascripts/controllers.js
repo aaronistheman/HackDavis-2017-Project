@@ -60,7 +60,16 @@ function($http, $window) {
   return auth;
 }]); // auth factory
 
-
+app.factory('listitems', [
+'$http',
+'$window',
+function($http, $window) {
+  var o = {};
+  o.create = function(item){
+    return $http.post('/ListItems', item).success(function(){});
+  };
+  return o;
+}]);
 
 app.controller('AuthCtrl', [
 '$scope',
@@ -85,6 +94,20 @@ function($scope, auth){
   };
 }]); // AuthCtrl controller
 
+app.controller('CheckCtrl', [
+'$scope',
+'auth',
+'listitems',
+function($scope, auth, listitems){
+  $scope.create = function(){
+    if(!($scope.content)) {
+      alert("Please enter content");
+      return;
+    }
+    listitems.create({content: $scope.content});
+    $scope.content = "";
+  };
+}]); 
 
 // app.controller('RegisterCtrl', [
 // '$scope', '$state',
