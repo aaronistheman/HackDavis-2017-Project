@@ -15,7 +15,8 @@ var ListItems = mongoose.model('ListItem');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'bob' });
+  // res.render('index', { title: 'bob' });
+  res.render('main-menu');
 });
 
 // junk route
