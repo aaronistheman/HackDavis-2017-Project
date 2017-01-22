@@ -81,10 +81,30 @@ app.factory('listitems', [
 '$http',
 '$window',
 function($http, $window) {
-  var o = {};
-  o.create = function(item){
-    return $http.post('/ListItems', item).success(function(){});
+  // var o = {
+  //   listitems : [
+  //     {content: "Go to school"},
+  //     {content: "Take the bus"},
+  //     {content: "Think of a name for the app"}
+  //     ]
+  // };
+  var o = {
+    listitems : []
   };
+
+  o.create = function(item){
+    return $http.post('/ListItems', item).success(function(data){
+      o.listitems.push(data);
+    });
+  };
+
+  o.getAll = function() {
+    return $http.get('/Events').success(function(data) {
+      angular.copy(data, o.listitems);
+    });
+  };
+
+  o.getAll();
   return o;
 }]);
 
@@ -119,6 +139,8 @@ app.controller('CheckCtrl', [
 'auth',
 'listitems',
 function($scope, auth, listitems){
+  $scope.listitems = listitems.listitems;
+
   $scope.create = function(){
     if(!($scope.content)) {
       alert("Please enter content");

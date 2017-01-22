@@ -19,9 +19,24 @@
 <form ng-submit="create()">
 <input type = "text" ng-model = "content">
 <input type = "submit">
+
+
+<!-- <ul>
+    <li ng-repeat="listitem in listitems">
+        {{ listitem.content }}</li>
+</ul> -->
+
 </form>
 
 <div class="container choices">
+ <div class="col">
+    <div ng-repeat="listitem in listitems">
+        <span class="listitem">
+            {{ listitem.content }}</span></div>
+ </div>
+</div>
+
+<!-- <div class="container choices">
  <div class="col">
    <div class="col-sm-6"><a href="#">Notes</a></div>
    <div class="col-sm-6"><a href="#">Calendar</a></div>
@@ -29,7 +44,7 @@
    <div class="col-sm-6"><a href="#">Checklist</a></div>
    <div class="col-sm-6"><a href="#">Games</a></div>
  </div>
-</div>
+</div> -->
 </body>
 
 </html>

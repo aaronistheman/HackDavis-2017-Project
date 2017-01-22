@@ -102,6 +102,17 @@ router.post('/Events', function(req, res, next) {
   })
 });
 
+// Get list items
+router.get('/Events', function(req, res, next) {
+  ListItems.find(function(err, listitems) {
+    if (err) {
+      return next(err);
+    }
+
+    res.json(listitems);
+  });
+});
+
 
 router.get('/game2', function(req, res, next) {
   res.render('game2');
