@@ -4,6 +4,7 @@ var passport = require('passport');
 
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
+var Event = mongoose.model('Event');
 
 var jwt = require('express-jwt');
 
@@ -29,7 +30,10 @@ router.get('/main-menu', function(req, res, next) {
 router.get('/register', function(req, res, next){
     res.render('register');
 });
-
+// junk route
+router.get('/schedule', function(req, res, next) {
+  res.render('event_form');
+});
 
 
 router.post('/register', function(req, res, next){
@@ -66,7 +70,15 @@ router.post('/login', function(req, res, next){
   })(req, res, next);
 });
 
+router.post('/Events', function(req, res, next) {
+  var event = new Event(req.body);
 
+  event.save (function(err, event) {
+    if(err) {return next(err);}
+
+    res.json(event);
+  })
+});
 
 
 module.exports = router;

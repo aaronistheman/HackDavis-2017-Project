@@ -61,6 +61,20 @@ function($http, $window) {
 }]); // auth factory
 
 
+app.factory('Schedule', [  // factory for schedule
+'$http',
+'$window',
+function($http, $window) {
+  var s = {};
+  s.create = function(event) {
+      return $http.post('/Events', event).success(function(data) {
+
+      });
+  }
+  return s;
+}]); // auth factory
+
+
 
 app.controller('AuthCtrl', [
 '$scope',
@@ -86,8 +100,19 @@ function($scope, auth){
 }]); // AuthCtrl controller
 
 
-// app.controller('RegisterCtrl', [
-// '$scope', '$state',
-// function($scope, $state) {
-
-// }]); // RegisterCtrl
+ app.controller('ScheduleCtrl', [
+ '$scope', 'Schedule',
+ function($scope, Schedule) {
+$scope.newevent = function() {
+  if (!$scope.title || !$scope.starthour            // checks if any fields are empty
+      || !$scope.endhour || !$scope.description) {
+    alert("Type something");
+    return;
+  } 
+  Schedule.create({
+    title:       $scope.title,
+    starthour:   $scope.starthour,
+    endhour:     $scope.endhour,
+    description: $scope.description
+  });
+ }}]); // RegisterCtrl}
