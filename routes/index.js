@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 
+var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
 var jwt = require('express-jwt');
@@ -22,6 +23,11 @@ router.get('/dude', function(req, res, next) {
 
 router.get('/main-menu', function(req, res, next) {
     res.render('main-menu');
+});
+
+// visit Register page
+router.get('/register', function(req, res, next){
+    res.render('register');
 });
 
 
