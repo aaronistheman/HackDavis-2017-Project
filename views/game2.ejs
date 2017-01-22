@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+#dott {
+	background: url(/images/fish.png);
+	width: 30px;
+	height: 30px;
+	position: absolute;
+}
+
+</style>
+</head>
+
+<body background="/images/game2bg.png"
+style = "background-repeat: no-repeat">
+
+<div class="image">
+<p>Find me I'm hidden with these fish! I'm a cute little purple fish!</p>
+<div id = "dott"></div>
+<canvas id = "canvass" width = "700" height = "500"></canvas>
+<script>
+
+var audio = new Audio('Tink Tink.wav');
+audio.loop = true;
+audio.play();
+
+window.onload = function() {
+	c = document.getElementById('canvass');
+	cc = c.getContext('2d');
+	setInterval(update,1000/30);
+}
+  
+//function update() {
+//	cc.fillStyle = 'grey';
+//	cc.fillRect(0,0,c.height,c.width);
+//}
+
+var dott = new Object();
+dott.element = 'dott';
+
+function putHere(sprite) {
+	var p = document.getElementById(sprite.element);
+	p.style.left = Math.random() * 700 + 'px';
+	p.style.top = Math.random() * 700 + 'px';
+}
+
+putHere(dott);
+
+document.getElementById('dott').addEventListener("click", function(){
+	alert("Great job! You found me! Find me again!");
+	putHere(dott);
+});
+
+</script>
+</body>
+
+</html>

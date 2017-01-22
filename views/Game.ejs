@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+#dott {
+	background: #BDFCF0;
+	width: 20px;
+	height: 700px;
+	position: absolute;
+}
+</style>
+<audio><source src="Tink.wav" type="audio/waveform" /></audio>
+</head>
+
+<body background="/images/game.png">
+
+<p>___Click and hold down any key until the new color fills the screen. Take long breaths and focus on the color waves.</p>
+<div id = "dott"></div>
+<canvas id = "canvass" width = "700" height = "500"></canvas>
+<script>
+//window.onload = function() {
+//	c = document.getElementById('canvass');
+//	cc = c.getContext('2d');
+//	setInterval(update,1000/30);
+//}
+//function update() {
+//	cc.fillStyle = 'grey';
+//	cc.fillRect(0,0,c.height,c.width);
+//}
+var audio = new Audio('Tink.wav');
+audio.loop = true;
+audio.play();
+
+var dott = new Object();
+dott.element = 'dott';
+
+function putHere(sprite) {
+	var p = document.getElementById(sprite.element);
+	p.style.left = '0px';
+	p.style.top = '0px';
+}
+
+document.getElementById('dott').style.width = '20px';
+document.getElementById('dott').style.height = '700px';
+putHere(dott);
+
+
+document.addEventListener("keydown", function(){
+	var dot = document.getElementById('dott');
+	dot.style.width = parseInt(dot.style.width) + 2 + 'px';
+	//alert(dot.style.width);
+	dot.style.height = parseInt(dot.style.height) + 2 + 'px';
+	//dot.style.width = '100px';
+	//console.log(document.getElementById('dott').style.width);
+	putHere(dott);
+});
+
+document.addEventListener("keyup", function(){
+	var dot = document.getElementById('dott');
+	dot.style.width = '20px';
+	dot.style.height = '700px';
+	putHere(dott);
+})
+
+</script>
+</body>
+
+</html>

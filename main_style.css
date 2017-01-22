@@ -1,0 +1,15 @@
+.image {
+ background-image:
+ url("/images/game2bg.png");
+ background-position: cover;
+ background-size: contain;
+ height:700px;
+ }
+
+ .image {
+ background-image:
+ url("/images/game.png");
+ background-position: cover;
+ background-size: cover;
+ height:700px;
+ }
