@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
@@ -5,13 +6,30 @@
 
 <script src="/javascripts/controllers.js"></script>
 
+<head>
+ <link href="stylesheets/checklist_style.css" type="text/css" rel="stylesheet">
+     <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+</head>
+
 <body ng-app="hackathon" ng-controller = "CheckCtrl">
 
 <form ng-submit="create()">
 <input type = "text" ng-model = "content">
 <input type = "submit">
-
 </form>
+
+<div class="container choices">
+ <div class="col">
+   <div class="col-sm-6"><a href="#">Notes</a></div>
+   <div class="col-sm-6"><a href="#">Calendar</a></div>
+
+   <div class="col-sm-6"><a href="#">Checklist</a></div>
+   <div class="col-sm-6"><a href="#">Games</a></div>
+ </div>
+</div>
 </body>
 
 </html>
