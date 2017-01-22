@@ -2,7 +2,7 @@ var app = angular.module('hackathon', []);
 
 
 
-var LocalStorageTokenName = 'rate-token';
+var LocalStorageTokenName = 'hackathon-token';
 app.factory('auth', [
 '$http',
 '$window',
