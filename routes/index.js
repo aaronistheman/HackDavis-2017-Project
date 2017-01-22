@@ -9,6 +9,7 @@ var jwt = require('express-jwt');
 
 var auth = jwt({secret: 'SECRET', userProperty: 'payload'});
 
+var ListItems = mongoose.model('ListItem');
 
 
 /* GET home page. */
@@ -67,7 +68,15 @@ router.post('/login', function(req, res, next){
   })(req, res, next);
 });
 
+router.post('/ListItems', function(req, res, next){
+	var item = new ListItems(req.body);
 
+	item.save(function(err, item) {
+		if(err){return next(err); }
+
+		res.json(item);
+	});
+});
 
 
 
@@ -81,6 +90,10 @@ router.get('/Game', function(req, res, next) {
 
 router.get('/game3', function(req, res, next) {
   res.render('game3');
+});
+
+router.get('/checklist', function(req, res, next) {
+  res.render('checklist');
 });
 
 

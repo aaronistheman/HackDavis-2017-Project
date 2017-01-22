@@ -10,6 +10,7 @@ var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
 require('./models/Users');
+require('./models/ListItem');
 mongoose.connect('mongodb://localhost/hackathon');
 
 
