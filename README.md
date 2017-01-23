@@ -4,6 +4,7 @@ About
 -----
 
 Authors: Aaron Kaloti, Joe Lynch, Tehya Yi, Hiro Baba
+
 Languages/software: JavaScript, MEAN (MongoDB/Mongoose, Express,
 AngularJS, Node.js), HTML/CSS
 
